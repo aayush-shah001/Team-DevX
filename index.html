@@ -1,1 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CodeCollab AI</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="dark-theme">
+    <nav class="top-navbar" id="topNavbar">
+      <div class="nav-left">
+        <div class="logo">⚡ CodeCollab AI</div>
+      </div>
+      <div class="nav-center">
+        <a href="#" class="nav-item active" data-tab="home">
+          <span class="icon">🏠</span>
+          <span class="label">Home</span>
+        </a>
+        <a href="#" class="nav-item" data-tab="rooms">
+          <span class="icon">💬</span>
+          <span class="label">Rooms</span>
+        </a>
+      </div>
+      <div class="nav-right">
+        <button id="themeToggle" class="theme-btn">☀️</button>
+      </div>
+    </nav>
+
+    <main class="main-content">
+      <section id="home-tab" class="tab-content active">
+        <div class="hero-section">
+          <div class="hero-illustration">
+            <div class="floating-card card-1">💻</div>
+            <div class="floating-card card-2">🤖</div>
+            <div class="floating-card card-3">⚡</div>
+          </div>
+
+          <div class="hero-content">
+            <h1 class="hero-title">Code Together, <span>AI‑Powered</span></h1>
+            <p class="hero-subtitle">
+              Real-time coding collaboration with intelligent AI assistant.
+              Debug faster, code smarter.
+            </p>
+
+            <div class="hero-stats">
+              <div class="stat">
+                <div class="stat-number">50k+</div>
+                <div class="stat-label">Developers</div>
+              </div>
+              <div class="stat">
+                <div class="stat-number">1M+</div>
+                <div class="stat-label">Messages</div>
+              </div>
+              <div class="stat">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">AI Active</div>
+              </div>
+            </div>
+
+            <div class="action-buttons">
+              <button id="joinRoomBtn" class="join-btn primary gradient-btn">
+                <span class="btn-icon">➕</span>
+                Join Room
+              </button>
+              <button id="createRoomBtn" class="join-btn secondary">
+                <span class="btn-icon">✨</span>
+                Create Room
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="rooms-tab" class="tab-content">
+        <div class="page-header">
+          <h1>Your Coding Rooms</h1>
+          <button class="create-room-btn gradient-btn">+ Create Room</button>
+        </div>
+
+        <div class="rooms-grid">
+          <div class="room-card featured" data-room="cpp">
+            <div class="room-badge">🔥 Trending</div>
+            <div class="room-header">
+              <span class="room-icon">#cpp</span>
+              <span class="room-members">24 online</span>
+            </div>
+            <p class="room-desc">
+              C++ debugging, algorithms, competitive programming
+            </p>
+            <div class="room-footer">
+              <span class="room-activity">Active now</span>
+              <button class="enter-room-btn primary">Enter Room</button>
+            </div>
+          </div>
+
+          <div class="room-card" data-room="javascript">
+            <div class="room-header">
+              <span class="room-icon">#javascript</span>
+              <span class="room-members">18 online</span>
+            </div>
+            <p class="room-desc">React, Node.js, frontend frameworks</p>
+            <button class="enter-room-btn">Enter Room</button>
+          </div>
+
+          <div class="room-card" data-room="python">
+            <div class="room-header">
+              <span class="room-icon">#python</span>
+              <span class="room-members">15 online</span>
+            </div>
+            <p class="room-desc">Data science, ML, web development</p>
+            <button class="enter-room-btn">Enter Room</button>
+          </div>
+
+          <div class="room-card" data-room="dsa">
+            <div class="room-header">
+              <span class="room-icon">#dsa</span>
+              <span class="room-members">12 online</span>
+            </div>
+            <p class="room-desc">Data structures & algorithms</p>
+            <button class="enter-room-btn">Enter Room</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="chat-tab" class="tab-content chat-room hidden">
+        <div class="chat-container">
+          <div class="chat-sidebar">
+            <div class="current-room-header">
+              <span class="room-icon">#cpp</span>
+              <span class="online-count">24 online</span>
+            </div>
+          </div>
+
+          <div class="chat-main">
+            <div class="chat-messages" id="chatMessages">
+              <div class="welcome-message">
+                <div class="message-bubble ai">
+                  <div class="ai-avatar">🤖</div>
+                  <div class="message-content">
+                    <strong>CodeGuard AI:</strong> Welcome! Mention
+                    <code>@ai bug</code> or <code>@ai fix</code> for instant
+                    debugging help.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="chat-input-area">
+              <div class="chat-input">
+                <input
+                  type="text"
+                  id="chatInput"
+                  placeholder="Type your message... @ai for AI help"
+                />
+                <button id="sendMessageBtn" class="send-btn">Send</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
 
